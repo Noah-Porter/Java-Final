@@ -9,6 +9,4 @@ public class Main
     Controller app = new Controller();
     app.start();
   }
-
-
 }

@@ -17,7 +17,13 @@ public class Controller
 	{
     System.out.println("Project");
     practice();
+    practiceTwo();
 	}
+
+  public void practiceTwo ()
+  {
+
+  }
   
   public void practice ()
   {
