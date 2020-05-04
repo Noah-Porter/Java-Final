@@ -2,13 +2,13 @@ package Controller;
 
 import java.util.Scanner;
 
-import Model.JFrame;
+
 import Model.Model;
 import View.Popup;
 
 public class Controller
 {
-  private JFrame createWindow;
+
   private Model questions;
   private Popup view;
   private Scanner inputScanner;
@@ -22,7 +22,7 @@ public class Controller
   public void start ()
 	{
     System.out.println("Project");
-    practiceThree();
+    practiceTwo();
 
 	}
   
