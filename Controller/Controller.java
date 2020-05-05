@@ -43,10 +43,9 @@ public class Controller
   
   public void practice ()
   {
-    Words custom = new Words();
-
     System.out.println("Let's begin");
 
+    Words custom = new Words();
     String response = "";
 
     response = view.askQuestion("What is player one's name?");

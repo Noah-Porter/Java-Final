@@ -59,4 +59,85 @@ public class Words
 
 	}
   
+
+  public String getPlayerOneName()
+  {
+    return playerOneName;
+  }
+  
+  public String getPlayerTwoName()
+  {
+    return playerTwoName;
+  }
+
+  public String getPlayerOneQuestionOne()
+  {
+    return playerOneQuestionOne;
+  }
+
+  public String getPlayerTwoQuestionOne()
+  {
+    return playerTwoQuestionOne;
+  }
+
+  public String getPlayerOneQuestionTwo()
+  {
+    return playerOneQuestionTwo;
+  }
+
+  public String getPlayerTwoQuestionTwo()
+  {
+    return playerTwoQuestionTwo;
+  }
+
+  public String getPlayerOneQuestionThree()
+  {
+    return playerOneQuestionThree;
+  }
+  
+  public String getPlayerTwoQuestionThree()
+  {
+    return playerTwoQuestionThree;
+  }
+
+  public void setPlayerOneName(String playerOneName)
+  {
+    this.playerOneName = playerOneName;
+  }
+  
+  public void setPlayerTwoName(String playerTwoName)
+  {
+    this.playerTwoName = playerTwoName;
+  }
+
+  public void setPlayerOneQuestionOne(String playerOneQuestionOne)
+  {
+    this.playerOneQuestionOne = playerOneQuestionOne;
+  }
+
+  public void setPlayerTwoQuestionOne(String playerTwoQuestionOne)
+  {
+    this.playerTwoQuestionOne = playerTwoQuestionOne;
+  }
+
+  public void setPlayerOneQuestionTwo(String playerOneQuestionTwo)
+  {
+    this.playerOneQuestionTwo = playerOneQuestionTwo;
+  }
+
+  public void setPlayerTwoQuestionTwo(String playerTwoQuestionTwo)
+  {
+    this.playerTwoQuestionTwo = playerTwoQuestionTwo;
+  }
+
+  public void setPlayerOneQuestionThree(String playerOneQuestionThree)
+  {
+    this.playerOneQuestionThree = playerOneQuestionThree;
+  }
+
+  public void setPlayerTwoQuestionThree(String playerTwoQuestionThree)
+  {
+    this.playerTwoQuestionThree = playerTwoQuestionThree;
+  }
+
 }
