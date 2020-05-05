@@ -31,9 +31,8 @@ public class Controller
   
   public void practiceTwo ()
   {
-    view.askQuestion("Do want to play a trivia game?");
-    String answer = inputScanner.nextLine();
-		
+    String answer = "";
+    answer = view.askQuestion("Do want to play a trivia game?");
 		if (answer.equalsIgnoreCase("Yes"))
 		{	
 		  practice();
@@ -48,6 +47,7 @@ public class Controller
 
     Words custom = new Words();
     String response = "";
+    String answer = "";
 
     response = view.askQuestion("What is player one's name?");
     response = view.askQuestion("Player one's name is " + response + ". Is that correct?");
@@ -84,17 +84,9 @@ public class Controller
 		
 		for (int index = 0; index < questions.length; index ++)
 		{
-      
-      response = view.askQuestion("Type a trivia question here, " + playerOneName);
-      
-      // for (int i = 0; i <questions.length; i ++)
-      // {
-      //   response = view.askQuestion(getPlayerOneName + "Type your answer here");
-
-      // }
-
-			questions[index] = "This is question# " + response;
-
+      response = view.askQuestion("Type a trivia question here");
+      answer = view.askQuestion("Type your answer here");
+      questions[index] = "This is question# " + response;
       // if (index > 0)
       // {
       //   Scanner(inputScanner);
