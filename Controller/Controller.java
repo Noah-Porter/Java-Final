@@ -9,6 +9,7 @@ import View.Popup;
 
 public class Controller
 {
+  private Words playerOneName;
   private Words defaultWords;
   private Words questions;
   private Popup view;
@@ -24,13 +25,13 @@ public class Controller
   public void start ()
 	{
     System.out.println("Project");
-    practice();
+    practiceTwo();
 
 	}
   
   public void practiceTwo ()
   {
-    System.out.println("Do want to play a trivia game?");
+    view.askQuestion("Do want to play a trivia game?");
     String answer = inputScanner.nextLine();
 		
 		if (answer.equalsIgnoreCase("Yes"))
@@ -43,13 +44,13 @@ public class Controller
   
   public void practice ()
   {
-    System.out.println("Let's begin");
+    view.displayMessage("Let's begin");
 
     Words custom = new Words();
     String response = "";
 
     response = view.askQuestion("What is player one's name?");
-    view.displayMessage("Player one's name is " + response + ". Is that correct?");
+    response = view.askQuestion("Player one's name is " + response + ". Is that correct?");
     if (response.equalsIgnoreCase("Yes"))
     {
       view.displayMessage("Great");
@@ -58,12 +59,12 @@ public class Controller
     else
     {
       response = view.askQuestion("What is player one's new name?");
-      view.displayMessage("Player one's new name is + " + response);
+      view.displayMessage("Player one's new name is " + response);
       custom.setPlayerOneName(response);
     }
 
     response = view.askQuestion("What is player two's name?");
-    view.displayMessage("Player two's name is " + response + ". Is that correct?");
+    response = view.askQuestion("Player two's name is " + response + ". Is that correct?");
     if (response.equalsIgnoreCase("Yes"))
     {
       view.displayMessage("Great");
@@ -72,10 +73,11 @@ public class Controller
     else
     {
       response = view.askQuestion("What is player two's new name?");
-      view.displayMessage("Player two's new name is + " + response);
+      view.displayMessage("Player two's new name is " + response);
       custom.setPlayerTwoName(response);
     }
 
+    view.displayMessage("Let's move on");
     
 
     String [] questions = new String [10];
@@ -83,8 +85,15 @@ public class Controller
 		for (int index = 0; index < questions.length; index ++)
 		{
       
+      response = view.askQuestion("Type a trivia question here, " + playerOneName);
+      
+      // for (int i = 0; i <questions.length; i ++)
+      // {
+      //   response = view.askQuestion(getPlayerOneName + "Type your answer here");
 
-			questions[index] = "This is question# " + index;
+      // }
+
+			questions[index] = "This is question# " + response;
 
       // if (index > 0)
       // {

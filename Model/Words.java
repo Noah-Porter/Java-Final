@@ -1,5 +1,7 @@
 package Model;
 
+import Controller.Controller;
+
 import java.util.*;
 
 public class Words
@@ -139,5 +141,12 @@ public class Words
   {
     this.playerTwoQuestionThree = playerTwoQuestionThree;
   }
+
+  public String toString()
+	{
+		String description = "Hi there, " + playerOneName;
+		
+		return description;
+	}
 
 }
