@@ -49,6 +49,7 @@ public class Controller
     String response = "";
     String answer = "";
     String reply = "";
+    int total = 1;
 
     response = view.askQuestion("What is player one's name?");
     response = view.askQuestion("Player one's name is " + response + ". Is that correct?");
@@ -81,7 +82,7 @@ public class Controller
     view.displayMessage("Let's move on");
     
 
-    String [] questions = new String [5];
+    String [] questions = new String [4];
 		
 		for (int index = 0; index < questions.length; index ++)
 		{
@@ -95,6 +96,7 @@ public class Controller
         if (reply.equalsIgnoreCase(answer))
         {
           view.displayMessage("Nice job! Now it's  your turn to ask the question.");
+          total = total++;
         }
         else
         {
@@ -102,6 +104,7 @@ public class Controller
           if (reply.equalsIgnoreCase(answer))
           {
             view.displayMessage("Great! Now it's your turn to ask the question.");
+            total = total++;
           }
           else
           {
@@ -109,20 +112,24 @@ public class Controller
           }
         }
       }
+    }
 
-      if(reply.equalsIgnoreCase(answer))
-      {
-        index.count()
-      }
-
-      questions[index] = "This is question# " + response;
-      // if (index > 0)
-      // {
-      //   Scanner(inputScanner);
-      //   view.displayMessage("You said: ");
-      // }
-		}
+      ArrayList<String> userInput = new ArrayList<String>();
+		  String input = view.askQuestion("Write the correct answers to all of the questions (one at a time)");
 		
+		  while(!input.equalsIgnoreCase("done") || userInput.size() > 10)
+	  	{
+			  userInput.add(input);
+		  	input = view.askQuestion("Add the rest of the answers. Type done when finished");
+		  }
+		
+		  view.displayMessage("Cool, you have: " + userInput.size() 
+		  + " correct answers. " + );
+		
+
+
+
+
 		for (int index = 0; index < questions.length; index ++)
 		{
 			String currentQuestion = questions[index];
