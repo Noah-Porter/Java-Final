@@ -48,6 +48,7 @@ public class Controller
     Words custom = new Words();
     String response = "";
     String answer = "";
+    String reply = "";
 
     response = view.askQuestion("What is player one's name?");
     response = view.askQuestion("Player one's name is " + response + ". Is that correct?");
@@ -80,12 +81,31 @@ public class Controller
     view.displayMessage("Let's move on");
     
 
-    String [] questions = new String [10];
+    String [] questions = new String [5];
 		
 		for (int index = 0; index < questions.length; index ++)
 		{
       response = view.askQuestion("Type a trivia question here");
-      answer = view.askQuestion("Type your answer here");
+      answer = view.askQuestion("Type your answer here for question: " + response);
+
+      for (int index2 = 0; index2 <5; index2 ++)
+      {
+        reply = view.askQuestion("Answer the following question (you have only three tries): "response);
+        if (reply.equalsIgnoreCase(answer));
+        {
+          view.displayMessage("Great Answer. Now the next question");
+        }
+        else
+        {
+          for (int i = 0; i < 3; i ++)
+          {
+            view.displayMessage("Try again");
+          }
+          view.displayMessage("The answer is: " + answer + ". Next question.");
+        }
+      }
+
+
       questions[index] = "This is question# " + response;
       // if (index > 0)
       // {
