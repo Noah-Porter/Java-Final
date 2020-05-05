@@ -1,14 +1,16 @@
 package Controller;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
+import java.util.ArrayList;
 
-import Model.Model;
+import Model.Words;
 import View.Popup;
 
 public class Controller
 {
-  private Model defaultWords;
-  private Model questions;
+  private Words defaultWords;
+  private Words questions;
   private Popup view;
   private Scanner inputScanner;
 
@@ -48,29 +50,31 @@ public class Controller
     String response = "";
 
     response = view.askQuestion("What is player one's name?");
-    custom.setPlayerOne(response);
     view.displayMessage("Player one's name is " + response + ". Is that correct?");
     if (response.equalsIgnoreCase("Yes"))
     {
       view.displayMessage("Great");
+      custom.setPlayerOneName(response);
     }
     else
     {
       response = view.askQuestion("What is player one's new name?");
       view.displayMessage("Player one's new name is + " + response);
+      custom.setPlayerOneName(response);
     }
 
     response = view.askQuestion("What is player two's name?");
-    custom.setPlayerTwo(response);
     view.displayMessage("Player two's name is " + response + ". Is that correct?");
     if (response.equalsIgnoreCase("Yes"))
     {
       view.displayMessage("Great");
+      custom.setPlayerTwoName(response);
     }
     else
     {
       response = view.askQuestion("What is player two's new name?");
       view.displayMessage("Player two's new name is + " + response);
+      custom.setPlayerTwoName(response);
     }
 
     
