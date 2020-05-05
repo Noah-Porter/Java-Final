@@ -1,5 +1,6 @@
 package Controller;
 
+import java.util.*;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
@@ -25,23 +26,23 @@ public class Controller
   public void start ()
 	{
     System.out.println("Project");
-    practiceTwo();
+    launch();
 
 	}
   
-  public void practiceTwo ()
+  public void launch ()
   {
     String answer = "";
     answer = view.askQuestion("Do want to play a trivia game?");
 		if (answer.equalsIgnoreCase("Yes"))
 		{	
-		  practice();
+		  setup();
 		}
 		view.displayMessage("Great job! See you next time!");
 		inputScanner.close();
   }
   
-  public void practice ()
+  public void setup ()
   {
     view.displayMessage("Let's begin");
 
@@ -50,6 +51,9 @@ public class Controller
     String answer = "";
     String reply = "";
     int total = 1;
+
+
+    //Player names
 
     response = view.askQuestion("What is player one's name?");
     response = view.askQuestion("Player one's name is " + response + ". Is that correct?");
@@ -80,7 +84,10 @@ public class Controller
     }
 
     view.displayMessage("Let's move on");
-    
+
+
+
+    //Questions for the trivia section
 
     String [] questions = new String [4];
 		
@@ -114,6 +121,23 @@ public class Controller
       }
     }
 
+            // creating a list of Integers 
+        List<Integer> list = Arrays.asList(reply.length()); 
+  
+        // Using count() to count the number 
+        // of elements in the stream and 
+        // storing the result in a variable. 
+        long total1 = list.stream().count(); 
+  
+        // Displaying the number of elements 
+        view.displayMessage("The total is " + total1); 
+
+
+
+
+      view.displayMessage("The total correct answers:" + total);
+
+
       ArrayList<String> userInput = new ArrayList<String>();
 		  String input = view.askQuestion("Write the correct answers to all of the questions (one at a time)");
 		
@@ -124,21 +148,6 @@ public class Controller
 		  }
 		
 		  view.displayMessage("Cool, you have: " + userInput.size() 
-		  + " correct answers. " + );
-		
-
-
-
-
-		for (int index = 0; index < questions.length; index ++)
-		{
-			String currentQuestion = questions[index];
-			view.displayMessage(currentQuestion);
-		}
-		
-		for (String question : questions)
-		{
-			view.displayMessage(question);
-		}
+		  + " correct answers. They are: " + userInput);
   }
 }
