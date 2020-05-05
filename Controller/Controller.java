@@ -88,23 +88,32 @@ public class Controller
       response = view.askQuestion("Type a trivia question here");
       answer = view.askQuestion("Type your answer here for question: " + response);
 
-      for (int index2 = 0; index2 <5; index2 ++)
+      for (int index2 = 0; index2 < 1; index2 ++)
       {
-        reply = view.askQuestion("Answer the following question (you have only three tries): "response);
-        if (reply.equalsIgnoreCase(answer));
+        reply = view.askQuestion("Answer the following question (you have only two tries): " + response);
+
+        if (reply.equalsIgnoreCase(answer))
         {
-          view.displayMessage("Great Answer. Now the next question");
+          view.displayMessage("Nice job! Now it's  your turn to ask the question.");
         }
         else
         {
-          for (int i = 0; i < 3; i ++)
+          reply = view.askQuestion("Try again");
+          if (reply.equalsIgnoreCase(answer))
           {
-            view.displayMessage("Try again");
+            view.displayMessage("Great! Now it's your turn to ask the question.");
           }
-          view.displayMessage("The answer is: " + answer + ". Next question.");
+          else
+          {
+            view.displayMessage("The answer is: " + answer + ". Now it's your turn to ask the question.");
+          }
         }
       }
 
+      if(reply.equalsIgnoreCase(answer))
+      {
+        index.count()
+      }
 
       questions[index] = "This is question# " + response;
       // if (index > 0)
